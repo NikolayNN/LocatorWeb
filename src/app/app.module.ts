@@ -7,13 +7,17 @@ import {UnitsComponent} from './units/units.component';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {SearchPipe} from './search.pipe';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AddUnitPageComponent } from './add-unit-page/add-unit-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UnitsComponent,
-    SearchPipe
+    SearchPipe,
+    HomePageComponent,
+    AddUnitPageComponent
   ],
   imports: [
     BrowserModule,
