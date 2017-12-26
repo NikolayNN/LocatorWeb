@@ -1,10 +1,20 @@
+
+
 <div class="col s4">
   <div class="card blue-grey darken-1">
     <div class="card-content white-text">
       <span class="card-title">Your Objects</span>
 
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input id="unit_name" type="text" class="validate" [(ngModel)]="searchStr">
+          <label class="active" for="unit_name">Object Name</label>
+        </div>
+      </div>
+
       <div class="collection">
-        <a href="#!" class="collection-item" *ngFor="let unit of unitList">
+        <a href="#!" class="collection-item" *ngFor="let unit of unitList | search:searchStr">
           {{unit.unitName}}
         </a>
       </div>

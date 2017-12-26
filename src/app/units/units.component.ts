@@ -8,10 +8,11 @@ import {UnitsService} from '../units.service';
 })
 export class UnitsComponent {
   unitList = [];
+  searchStr = '';
 
   constructor(private  unitsService: UnitsService) {}
 
-  onClickAddUnit(){
+  onClickAddUnit() {
     console.log('click');
   }
 
