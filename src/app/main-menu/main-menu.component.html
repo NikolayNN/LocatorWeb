@@ -1,7 +1,7 @@
 <div class="row">
   <app-units (onClickUnit)="updateSelectedCarId($event)"></app-units>
 
-  <app-dates-selector [hidden]="dateSelectorHide"></app-dates-selector>
+  <app-dates-selector (onUpdateDate)="updateDate($event)" [hidden]="dateSelectorHide"></app-dates-selector>
 
   <app-report-selector [hidden]="dateSelectorHide"></app-report-selector>
 </div>

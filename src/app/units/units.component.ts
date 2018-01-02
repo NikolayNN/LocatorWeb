@@ -15,7 +15,6 @@ export class UnitsComponent {
   }
 
   onClickAddUnit() {
-    console.log('click');
   }
 
   ngOnInit() {

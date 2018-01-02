@@ -6,20 +6,20 @@
       <p>Start date</p>
       <div class="row">
         <div class="col s7">
-          <input type="date" class="datepicker" value="{{today}}">
+          <input type="date" (change)="updateStartDate($event)"  class="datepicker" value="{{startDate}}">
         </div>
         <div class="col s5">
-          <input type="time" class="timepicker" value="00:00">
+          <input type="time" (change)="updateStartTime($event)" class="timepicker" value="{{startTime}}">
         </div>
       </div>
 
       <p>Finish date</p>
       <div class="row">
         <div class="col s7">
-          <input type="date" class="datepicker" value="{{today}}">
+          <input type="date" (change)="updateFinishDate($event)" class="datepicker" value="{{finishDate}}">
         </div>
         <div class="col s5">
-          <input type="time" class="timepicker" value="23:59">
+          <input type="time" (change)="updateFinishTime($event)" class="timepicker" value="{{finishTime}}">
         </div>
       </div>
     </div>

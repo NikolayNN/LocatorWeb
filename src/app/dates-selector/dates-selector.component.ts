@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-dates-selector',
@@ -7,14 +7,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DatesSelectorComponent implements OnInit {
 
-  today = '2018-1-2';
+  startDate = '';
+  startTime = '';
+
+  finishDate = '';
+  finishTime = '';
+
+  @Output() onUpdateDate = new EventEmitter<{
+    startDate: string,
+    startTime: string,
+    finishDate: string,
+    finishTime: string
+  }>();
 
   constructor() {
-    this.today = this.getCurrentDate();
-    console.log(this.getCurrentDate());
+    const today = this.getCurrentDate();
+    this.startDate = today;
+    this.startTime = '00:00';
+    this.finishDate = today;
+    this.finishTime = '23:59';
   }
 
   ngOnInit() {
+    this.emitSelectedDates();
   }
 
   getCurrentDate() {
@@ -33,4 +48,32 @@ export class DatesSelectorComponent implements OnInit {
     return yyyy + '-' + mm + '-' + dd;
   }
 
+  emitSelectedDates() {
+    this.onUpdateDate.emit({
+      startDate: this.startDate,
+      startTime: this.startTime,
+      finishDate: this.finishDate,
+      finishTime: this.finishTime
+    });
+  }
+
+  updateStartDate(event: Event) {
+    this.startDate = (<HTMLInputElement>event.target).value;
+    this.emitSelectedDates();
+  }
+
+  updateStartTime(event: Event) {
+    this.startTime = (<HTMLInputElement>event.target).value;
+    this.emitSelectedDates();
+  }
+
+  updateFinishDate(event: Event) {
+    this.finishDate = (<HTMLInputElement>event.target).value;
+    this.emitSelectedDates();
+  }
+
+  updateFinishTime(event: Event) {
+    this.finishTime = (<HTMLInputElement>event.target).value;
+    this.emitSelectedDates();
+  }
 }
