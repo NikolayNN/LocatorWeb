@@ -14,7 +14,11 @@
       </div>
 
       <div class="collection">
-        <a href="#!" class="collection-item" *ngFor="let unit of unitList | search:searchStr">
+        <a
+          href="#!" class="collection-item"
+          *ngFor="let unit of unitList | search:searchStr"
+          (click)="getSelectedUnitId(unit.id)"
+        >
           {{unit.unitName}}
         </a>
       </div>

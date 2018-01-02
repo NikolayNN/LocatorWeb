@@ -7,8 +7,10 @@ import {UnitsComponent} from './units/units.component';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {SearchPipe} from './search.pipe';
-import { HomePageComponent } from './home-page/home-page.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 import { AddUnitPageComponent } from './add-unit-page/add-unit-page.component';
+import { DatesSelectorComponent } from './dates-selector/dates-selector.component';
+import { ReportSelectorComponent } from './report-selector/report-selector.component';
 
 
 @NgModule({
@@ -16,8 +18,10 @@ import { AddUnitPageComponent } from './add-unit-page/add-unit-page.component';
     AppComponent,
     UnitsComponent,
     SearchPipe,
-    HomePageComponent,
-    AddUnitPageComponent
+    MainMenuComponent,
+    AddUnitPageComponent,
+    DatesSelectorComponent,
+    ReportSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -27,4 +31,7 @@ import { AddUnitPageComponent } from './add-unit-page/add-unit-page.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+}

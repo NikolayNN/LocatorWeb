@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {UnitsService} from '../units.service';
 
 @Component({
@@ -9,8 +9,10 @@ import {UnitsService} from '../units.service';
 export class UnitsComponent {
   unitList = [];
   searchStr = '';
+  @Output() onClickUnit = new EventEmitter<{id: number}>();
 
-  constructor(private  unitsService: UnitsService) {}
+  constructor(private  unitsService: UnitsService) {
+  }
 
   onClickAddUnit() {
     console.log('click');
@@ -20,5 +22,15 @@ export class UnitsComponent {
     this.unitsService.getUnits().subscribe(units => {
       this.unitList = units;
     });
+  }
+
+  // getUnitById(id: long){
+  //
+  // }
+  getSelectedUnitId(id: number) {
+
+    this.onClickUnit.emit({
+      id: id
+  });
   }
 }
