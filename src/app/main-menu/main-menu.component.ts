@@ -16,6 +16,12 @@ export class MainMenuComponent implements OnInit {
   finishDate = '';
   finishTime = '';
 
+  formData = {
+    id: this.selectedUnitId,
+    startDateTime: this.startDate + ' ' + this.startTime,
+    finishDateTime: this.finishDate + ' ' + this.finishTime
+  };
+
   constructor() { }
 
   ngOnInit() {
@@ -26,6 +32,12 @@ export class MainMenuComponent implements OnInit {
     console.log(obj.id);
     this.selectedUnitId = obj.id;
     this.dateSelectorHide = false;
+
+    this.formData = {
+      id: this.selectedUnitId,
+      startDateTime: this.startDate + ' ' + this.startTime,
+      finishDateTime: this.finishDate + ' ' + this.finishTime
+    };
   }
 
   updateDate(selectedDates) {
@@ -34,5 +46,11 @@ export class MainMenuComponent implements OnInit {
     this.startTime = selectedDates.startTime;
     this.finishDate = selectedDates.finishDate;
     this.finishTime = selectedDates.finishTime;
+
+    this.formData = {
+        id: this.selectedUnitId,
+        startDateTime: this.startDate + ' ' + this.startTime,
+        finishDateTime: this.finishDate + ' ' + this.finishTime
+    };
   }
 }
