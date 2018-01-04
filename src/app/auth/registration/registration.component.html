@@ -1,0 +1,49 @@
+<p class="text-xs-center">Registration</p>
+<form>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="email"
+      placeholder="Input email"
+    >
+  </div>
+  <div class="form-group has-error">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="password"
+      placeholder="Input password"
+    >
+    <span class="form-help-text">Error message.</span>
+  </div>
+  <div class="form-group has-success">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="name"
+      placeholder="Input name"
+    >
+    <span class="form-help-text">Success message.</span>
+  </div>
+  <div class="form-group">
+    <p>
+      <input type="checkbox" id="agree" />
+      <label for="agree">Согласен с правилами</label>
+    </p>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-xs-center">
+      Already have account?
+      <a href="login">
+        Sign In!
+      </a>
+    </p>
+  </div>
+</form>

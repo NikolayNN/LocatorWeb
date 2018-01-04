@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {UnitsService} from '../units.service';
+import {UnitsService} from '../../units.service';
 
 @Component({
   selector: 'app-units',
