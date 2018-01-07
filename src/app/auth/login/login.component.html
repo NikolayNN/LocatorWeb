@@ -1,44 +1,38 @@
-
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div
-    class="form-group"
-    [ngClass]="{'has-error': form.get('login').invalid && form.get('login').touched}"
-  >
-
+  <div class="form-group">
     <div
       class="alert"
       *ngIf="message.show"
     ><p>{{message.text}}</p></div>
-
-    <label for="login">Login</label>
-    <input
-      type="text"
-      class="form-control underlined"
-      id="login"
-      placeholder="Input your login"
-      formControlName="login"
-    >
-    <span
-      class="form-help-text"
-      *ngIf="form.get('login').invalid && form.get('login').touched"
-    >
-      <span *ngIf="form.get('login')['errors']['required']">Login can't be empty.</span>
-    </span>
+    <div class="input-field col s12">
+      <label for="login">Login</label>
+      <input
+        type="text"
+        [ngClass]="{'invalid': form.get('login').invalid && form.get('login').touched}"
+        id="login"
+        formControlName="login"
+      >
+      <div
+        class="chip"
+        *ngIf="form.get('login').invalid && form.get('login').touched"
+      >
+        <span *ngIf="form.get('login')['errors']['required']">Login can't be empty.</span>
+      </div>
+    </div>
   </div>
   <div
-    class="form-group"
+    class="input-field col s12"
     [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}"
   >
     <label for="password">Password</label>
     <input
       type="password"
-      class="form-control underlined"
+      [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
       id="password"
-      placeholder="password"
       formControlName="password"
     >
-    <span
-      class="form-help-text"
+    <div
+      class="chip"
       *ngIf="form.get('password').invalid && form.get('password').touched"
     >
       <span *ngIf="form.get('password')['errors']['required']">Password can't be empty.</span>
@@ -47,14 +41,15 @@
         {{form.get('password')['errors']['minlength']['actualLength']}}
       </span>
 
-    </span>
+    </div>
   </div>
   <div>
     <button
       type="submit"
-      class="btn btn-block btn-primary"
+      class="btn waves-effect waves-light"
       [disabled]="form.invalid"
-    >Sign In</button>
+    >Sign In
+    </button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">
