@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from "../../shared/models/user.model";
+import {UsersService} from "../../shared/services/users.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +13,8 @@ export class RegistrationComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() {
+  constructor(private userService: UsersService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -23,6 +27,15 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    const {email, password, login} = this.form.value;
+    const user = new User(email, password, login);
+    this.userService.createNewUser(user)
+      .subscribe(() => {
+        this.router.navigate(['/login'], {
+          queryParams: {
+            nowCanLogin: true
+          }
+        })
+      });
   }
 }

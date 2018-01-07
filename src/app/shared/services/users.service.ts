@@ -14,5 +14,10 @@ export class UsersService {
       .map((response: Response) => response.json())
       .map((user: User) => user.id > 0 ? user : undefined);
   }
+
+  createNewUser(user: User): Observable<User> {
+    return this.http.post('http://localhost:8080/user', user)
+      .map((response: Response) => response.json());
+  }
 }
 
