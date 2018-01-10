@@ -6,8 +6,8 @@ import {MainComponent} from "./main/main.component";
 
 const routes: Routes = [
   {
-    path: 'system', component: SystemComponent, pathMatch: 'full', children: [
-    {path: 'main', component: MainComponent, pathMatch: 'full'}
+    path: 'system', component: SystemComponent, children: [
+    {path: 'main', component: MainComponent}
   ]
   }
 ];

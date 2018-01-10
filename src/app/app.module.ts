@@ -17,7 +17,8 @@ import {UsersService} from "./shared/services/users.service";
 import {AuthService} from "./shared/services/auth.service";
 import {SystemModule} from "./system/system.module";
 import {SystemComponent} from "./system/system.component";
-
+import {Routes} from "@angular/router";
+import {LoginComponent} from "./auth/login/login.component";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,4 @@ import {SystemComponent} from "./system/system.component";
   bootstrap: [AppComponent]
 })
 export class AppModule {
-
-
 }
