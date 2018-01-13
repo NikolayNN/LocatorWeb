@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {UnitsService} from '../../shared/services/units.service';
+import {Unit} from '../../shared/models/unit.model';
 
 declare var jquery: any;
 declare var $: any;
@@ -10,20 +12,16 @@ declare var $: any;
 })
 export class UnitsComponent implements OnInit {
 
-  unitList = [];
+  unitList: Unit[] = [];
   searchStr = '';
 
-  constructor() {
+  constructor(private unitsService: UnitsService) {
   }
 
   ngOnInit() {
-    this.unitList = [
-      {id: 1, name: 'Ford AK 5487-7', imei: '123123213'},
-      {id: 2, name: 'Scania MP 2498-7', imei: '354354435'},
-      {id: 3, name: 'Daf EK 0976-7', imei: '686787678867'},
-      {id: 4, name: 'Man HH 6743-7', imei: '35435565656'},
-      {id: 5, name: 'Man KF 9536-7', imei: '6766787688'}
-    ];
+    this.unitsService.getUnits().subscribe(units => {
+      this.unitList = units;
+    });
   }
 
   showModalAddUnit() {

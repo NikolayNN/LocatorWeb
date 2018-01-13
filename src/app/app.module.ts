@@ -14,6 +14,7 @@ import {SystemModule} from './system/system.module';
 import {SystemComponent} from './system/system.component';
 import {Routes} from '@angular/router';
 import {LoginComponent} from './auth/login/login.component';
+import {UnitsService} from "./shared/services/units.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {LoginComponent} from './auth/login/login.component';
     FormsModule,
     SystemModule
   ],
-  providers: [UsersService, AuthService],
+  providers: [UsersService, AuthService, UnitsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -6,8 +6,10 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class SearchPipe implements PipeTransform {
 
   transform(unitList, value) {
+    console.log(unitList);
+    console.log(value);
     return unitList.filter(unit => {
-      return unit.name.toLowerCase().includes(value.toLowerCase());
+      return unit.unitName.toLowerCase().includes(value.toLowerCase());
     });
   }
 }
