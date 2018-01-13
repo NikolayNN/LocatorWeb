@@ -1,4 +1,3 @@
-
 import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
@@ -8,8 +7,7 @@ export class SearchPipe implements PipeTransform {
 
   transform(unitList, value) {
     return unitList.filter(unit => {
-      return unit.unitName.toLowerCase().includes(value.toLowerCase());
+      return unit.name.toLowerCase().includes(value.toLowerCase());
     });
   }
-
 }

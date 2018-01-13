@@ -9,6 +9,7 @@ import { UnitInfoComponent } from './unit-info/unit-info.component';
 import { DateSelectorComponent } from './date-selector/date-selector.component';
 import { ReportSelectorComponent } from './report-selector/report-selector.component';
 import {UnitsComponent} from './units/units.component';
+import {SearchPipe} from "./units/search.pipe";
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {UnitsComponent} from './units/units.component';
     HeaderComponent,
     UnitInfoComponent,
     DateSelectorComponent,
-    ReportSelectorComponent
+    ReportSelectorComponent,
+    SearchPipe
   ]
 })
 export class SystemModule {

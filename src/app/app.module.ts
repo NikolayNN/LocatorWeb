@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import {UnitsComponent} from './system/units/units.component';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
-import {SearchPipe} from './search.pipe';
 import {AuthModule} from './auth/auth.module';
 import {AppRoutingModule} from './app-routing.module';
 import {UsersService} from './shared/services/users.service';
@@ -18,14 +17,14 @@ import {LoginComponent} from './auth/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AuthModule,
     AppRoutingModule,
+    FormsModule,
     SystemModule
   ],
   providers: [UsersService, AuthService],

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
-import {Message} from '../../shared/models/message.model';
+import {WarningUiMessage} from '../../shared/models/warning-ui-message.model';
 import {AuthService} from '../../shared/services/auth.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 
@@ -14,7 +14,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  message: Message;
+  message: WarningUiMessage;
 
   constructor(private usersService: UsersService,
               private authService: AuthService,
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.message = new Message('danger', '', false);
+    this.message = new WarningUiMessage('danger', '', false);
 
     this.route.queryParams.subscribe((params: Params) => {
       if (params['nowCanLogin']) {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private showMessage(message: Message) {
+  private showMessage(message: WarningUiMessage) {
     this.message = message;
     window.setTimeout(() => {
       this.message.text = '';
