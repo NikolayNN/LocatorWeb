@@ -20,10 +20,4 @@ export class UnitsService {
         });
       });
   }
-
-  unitList = [
-    {id: '1', unitImei: '353386060630601', unitName: 'ford'},
-    {id: '2', unitImei: '353386060630602', unitName: 'nissan'},
-    {id: '3', unitImei: '353386060630603', unitName: 'chevrolet'}
-  ];
 }
