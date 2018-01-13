@@ -21,9 +21,28 @@
         <a href="/system" class="collection-item">Man KF 9536-7</a>
       </div>
 
-      <a class="btn-floating btn-large waves-effect waves-light red">
+
+
+      <!-- Modal Add New Object Trigger -->
+      <a
+        class="btn-floating btn-large waves-effect waves-light red modal-trigger"
+        (click)="showModalAddUnit()"
+        href="#modalAddObjectId"
+      >
         <i class="material-icons">add</i>
       </a>
 
+      <!-- Modal Add New Object Structure -->
+      <div id="modalAddObjectId" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+
     </div>
   </div>
+</div>
