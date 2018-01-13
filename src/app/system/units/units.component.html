@@ -22,7 +22,6 @@
       </div>
 
 
-
       <!-- Modal Add New Object Trigger -->
       <a
         class="btn-floating btn-large waves-effect waves-light red modal-trigger"
@@ -34,12 +33,33 @@
 
       <!-- Modal Add New Object Structure -->
       <div id="modalAddObjectId" class="modal">
-        <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <div class="container">
+          <div class="modal-content">
+            <h4>Create New Object</h4>
+
+            <div class="input-field col s12">
+              <input id="object_name" type="text" class="validate">
+              <label for="object_name">Object Name</label>
+            </div>
+
+
+            <select class="browser-default">
+              <option value="" disabled selected>Select Protocol</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+
+            <div class="input-field col s12">
+              <input id="object_imei" type="text" class="validate">
+              <label for="object_imei">Object IMEI</label>
+            </div>
+
+          </div>
+          <div class="modal-footer raw">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Create</a>
+          </div>
         </div>
       </div>
 
