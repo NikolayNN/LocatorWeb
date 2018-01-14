@@ -11,18 +11,18 @@
 
       <p>Start Date</p>
       <div class="col s7">
-        <input type="text" class="datepicker" value="2018-01-11">
+        <input type="text" class="datepicker" (click)="showCalendar()" value="2018-01-11">
       </div>
       <div class="col s5">
-        <input type="text" class="timepicker" value="00:00">
+        <input type="text" class="timepicker" (click)="showClock()" value="00:00">
       </div>
 
       <p>Finish Date</p>
       <div class="col s7">
-        <input type="text" class="datepicker" value="2018-01-11">
+        <input type="text" class="datepicker" (click)="showCalendar()" value="2018-01-11">
       </div>
       <div class="col s5">
-        <input type="text" class="timepicker" value="23:59">
+        <input type="text" class="timepicker" (click)="showClock()" value="23:59">
       </div>
     </div>
   </div>
