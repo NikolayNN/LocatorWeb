@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {UnitsService} from '../../shared/services/units.service';
 import {Unit} from '../../shared/models/unit.model';
 
@@ -14,6 +14,9 @@ export class UnitsComponent implements OnInit {
 
   unitList: Unit[] = [];
   searchStr = '';
+  selectedUnit: Unit;
+
+  @Output() onClickUnit = new EventEmitter<Unit>();
 
   constructor(private unitsService: UnitsService) {
   }
@@ -24,8 +27,12 @@ export class UnitsComponent implements OnInit {
     });
   }
 
+  getSelectedUnitId(unit: Unit) {
+    this.selectedUnit = unit;
+    this.onClickUnit.emit(unit);
+  }
+
   showModalAddUnit() {
     $('.modal').modal();
   }
-
 }

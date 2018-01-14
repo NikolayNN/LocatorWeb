@@ -17,7 +17,7 @@
         <a
           class="collection-item"
           *ngFor="let unit of unitList | search:searchStr"
-
+          (click)="getSelectedUnitId(unit)"
         >
           {{unit.unitName}}
         </a>

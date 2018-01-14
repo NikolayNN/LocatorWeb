@@ -8,11 +8,11 @@
 
 <div class="row">
   <div class="col s3">
-    <app-units></app-units>
+    <app-units (onClickUnit)="receiveSelectedUnit($event)"></app-units>
   </div>
 
   <div class="col s3">
-    <app-unit-info></app-unit-info>
+    <app-unit-info [selectedUnit]="selectedUnit"></app-unit-info>
   </div>
 
   <div class="col s3">
@@ -20,7 +20,7 @@
   </div>
 
   <div class="col s3">
-    <app-report-selector></app-report-selector>
+    <app-report-selector [selectedUnit]="selectedUnit"></app-report-selector>
   </div>
 
   <div class="col s9">

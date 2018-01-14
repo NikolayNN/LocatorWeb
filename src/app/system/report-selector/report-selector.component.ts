@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Unit} from '../../shared/models/unit.model';
 
 @Component({
   selector: 'app-report-selector',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report-selector.component.scss']
 })
 export class ReportSelectorComponent implements OnInit {
+
+  @Input() selectedUnit: Unit;
 
   constructor() { }
 
