@@ -10,7 +10,7 @@ export class SystemComponent {
 
   selectedUnit: Unit;
 
-  receiveSelectedUnit($event: Event) {
+  receiveSelectedUnit($event) {
     this.selectedUnit = $event;
     console.log('selected unit');
     console.log(this.selectedUnit);
