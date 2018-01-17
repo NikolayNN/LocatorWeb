@@ -10,6 +10,8 @@ declare var $: any;
 })
 export class DateSelectorComponent implements OnInit {
 
+  startDate = '0000';
+
   constructor() {
   }
 
@@ -24,7 +26,11 @@ export class DateSelectorComponent implements OnInit {
       clear: 'Clear',
       close: 'Ok',
       closeOnSelect: false // Close upon selecting a date,
-    });
+    })
+      .on('change', () => {
+        this.startDate = $('.datepicker').val();
+        console.log('triggered change');
+      });
   }
 
   showClock() {
