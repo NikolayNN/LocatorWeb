@@ -9,13 +9,17 @@ import { UnitInfoComponent } from './unit-info/unit-info.component';
 import { DateSelectorComponent } from './date-selector/date-selector.component';
 import { ReportSelectorComponent } from './report-selector/report-selector.component';
 import {UnitsComponent} from './units/units.component';
-import {SearchPipe} from "./units/search.pipe";
+import {SearchPipe} from './units/search.pipe';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     SystemRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCNbGZv2S3KMuJkCfCUXsX_kxV99gHEfbk'
+    })
   ],
   declarations: [
     SystemComponent,

@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild} from "@angular/core";
-import {Unit} from "../shared/models/unit.model";
-import {DateSelectorComponent} from "./date-selector/date-selector.component";
-import {UnitsService} from "../shared/services/units.service";
+import {Component, OnInit} from '@angular/core';
+import {Unit} from '../shared/models/unit.model';
+import {DateSelectorComponent} from './date-selector/date-selector.component';
+import {UnitsService} from '../shared/services/units.service';
 
 @Component({
   selector: 'app-system',
@@ -52,6 +52,5 @@ export class SystemComponent implements OnInit {
           console.log(this.selectedUnit);
         }
       });
-
   }
 }
