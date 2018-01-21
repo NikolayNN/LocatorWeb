@@ -12,6 +12,8 @@ export class MapComponent implements OnInit {
   lng: number = 27.3894;
 
   @Input() unitList: Unit[] = [];
+  @Input() selectedUnit: Unit;
+
 
   constructor() { }
 

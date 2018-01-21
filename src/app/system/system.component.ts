@@ -18,8 +18,7 @@ export class SystemComponent implements OnInit {
   finishDate = '';
   finishTime = '';
 
-  constructor(private unitsService: UnitsService,
-              private dateSelectorComponent: DateSelectorComponent) {
+  constructor(private unitsService: UnitsService) {
   }
 
   ngOnInit() {

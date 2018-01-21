@@ -2,6 +2,7 @@
   <div class="col s12">
     <div class="card">
       <div class="card-image">
+        <p>messages {{selectedUnit.messages.length}}</p>
         <agm-map
           [latitude]="lat"
           [longitude]="lng"
@@ -14,9 +15,16 @@
             [latitude]="unit.messages[0].latitude"
             [longitude]="unit.messages[0].longitude"
             [label]="unit.unitName"
-            [iconUrl]="'http://download.seaicons.com/icons/icons-land/transporter/128/Car-Top-Red-icon.png'"
           >
           </agm-marker>
+          <agm-polyline>
+            <agm-polyline-point
+              *ngFor="let message of selectedUnit.messages"
+              [latitude]="message.latitude"
+              [longitude]="message.longitude"
+            >
+            </agm-polyline-point>
+          </agm-polyline>
         </agm-map>
       </div>
     </div>
