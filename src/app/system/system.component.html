@@ -15,14 +15,16 @@
     <app-unit-info [selectedUnit]="selectedUnit"></app-unit-info>
   </div>
 
-  <div class="col s3">
-    <app-date-selector></app-date-selector>
-  </div>
 
-  <div class="col s3">
-    <app-report-selector [selectedUnit]="selectedUnit"></app-report-selector>
-  </div>
+    <div class="col s3">
+      <app-date-selector (dateUpdate)="receiveDates($event)"></app-date-selector>
+    </div>
 
+  <form (ngSubmit)="receiveUnitWithMessages()">
+    <div class="col s3">
+      <app-report-selector [selectedUnit]="selectedUnit"></app-report-selector>
+    </div>
+  </form>
   <div class="col s9">
     <app-map></app-map>
   </div>

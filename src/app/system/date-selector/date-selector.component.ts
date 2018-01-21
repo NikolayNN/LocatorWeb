@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
-declare var jquery:any;
-declare var $:any;
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-date-selector',
@@ -10,11 +10,13 @@ declare var $:any;
 })
 export class DateSelectorComponent implements OnInit {
 
-  startDate = '';
-  startTime = '';
+  public startDate = '';
+  public startTime = '';
 
-  finishDate = '';
-  finishTime = '';
+  public finishDate = '';
+  public finishTime = '';
+
+  @Output() dateUpdate = new EventEmitter<any>();
 
   constructor() {
   }
@@ -25,6 +27,7 @@ export class DateSelectorComponent implements OnInit {
     this.startTime = '00:00';
     this.finishDate = today;
     this.finishTime = '23:59';
+    this.updateDates();
   }
 
   getCurrentDate() {
@@ -54,8 +57,8 @@ export class DateSelectorComponent implements OnInit {
       closeOnSelect: true
     })
       .on('change', () => {
-          this.startDate = $('#startDate').val();
-          console.log('startDate' + this.startDate);
+        this.startDate = $('#startDate').val();
+        this.updateDates();
       });
   }
 
@@ -71,7 +74,7 @@ export class DateSelectorComponent implements OnInit {
     })
       .on('change', () => {
         this.finishDate = $('#finishDate').val();
-        console.log('finishDate' + this.finishDate);
+        this.updateDates();
       });
   }
 
@@ -87,7 +90,7 @@ export class DateSelectorComponent implements OnInit {
       ampmclickable: true, // make AM PM clickable
     }).on('change', () => {
       this.startTime = $('#startTime').val();
-      console.log('startTime' + this.startTime);
+      this.updateDates();
     });
   }
 
@@ -102,8 +105,17 @@ export class DateSelectorComponent implements OnInit {
       autoclose: false, // automatic close timepicker
       ampmclickable: true, // make AM PM clickable
     }).on('change', () => {
-      this.finishTime = $('#finishTime').val();
-      console.log('finishTime' + this.finishTime);
+      this.finishTime = new $('#finishTime').val();
+      this.updateDates();
+    });
+  }
+
+  updateDates() {
+    this.dateUpdate.emit( {
+      startDate: this.startDate,
+      startTime: this.startTime,
+      finishDate: this.finishDate,
+      finishTime: this.finishTime
     });
   }
 }
