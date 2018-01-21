@@ -11,6 +11,8 @@ export class SystemComponent implements OnInit {
 
   selectedUnit: Unit;
 
+  unitList: Unit[] = [];
+
   startDate = '';
   startTime = '';
   finishDate = '';
@@ -52,5 +54,9 @@ export class SystemComponent implements OnInit {
           console.log(this.selectedUnit);
         }
       });
+  }
+
+  receiveUnitList(updatedUnitList) {
+    this.unitList = updatedUnitList;
   }
 }

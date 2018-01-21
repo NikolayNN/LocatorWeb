@@ -17,6 +17,7 @@ export class UnitsComponent implements OnInit {
   selectedUnit: Unit;
 
   @Output() onClickUnit = new EventEmitter<Unit>();
+  @Output() updateUnitList = new EventEmitter<Unit[]>();
 
   constructor(private unitsService: UnitsService) {
   }
@@ -24,6 +25,7 @@ export class UnitsComponent implements OnInit {
   ngOnInit() {
     this.unitsService.getUnits().subscribe(units => {
       this.unitList = units;
+      this.updateUnitList.emit(this.unitList);
     });
   }
 

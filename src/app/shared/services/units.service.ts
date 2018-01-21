@@ -15,13 +15,7 @@ export class UnitsService {
     return this.http.get('http://localhost:8080/unit')
       .map(response => response.json())
       .map(units => {
-        return units.map(u => {
-          return {
-            id: u.id,
-            unitImei: u.unitImei,
-            unitName: u.unitName
-          };
-        });
+        return units.map((unit: Unit) => unit.id > 0 ? unit : undefined);
       });
   }
 

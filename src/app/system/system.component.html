@@ -8,7 +8,7 @@
 
 <div class="row">
   <div class="col s3">
-    <app-units (onClickUnit)="receiveSelectedUnit($event)"></app-units>
+    <app-units (onClickUnit)="receiveSelectedUnit($event)" (updateUnitList)="receiveUnitList($event)"></app-units>
   </div>
 
   <div class="col s3">
@@ -26,6 +26,6 @@
     </div>
   </form>
   <div class="col s9">
-    <app-map></app-map>
+    <app-map [unitList]="unitList"></app-map>
   </div>
 </div>

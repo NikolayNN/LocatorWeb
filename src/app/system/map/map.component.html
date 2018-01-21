@@ -2,7 +2,22 @@
   <div class="col s12">
     <div class="card">
       <div class="card-image">
-        <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+        <agm-map
+          [latitude]="lat"
+          [longitude]="lng"
+          [mapTypeControl]="true"
+          [fullscreenControl]="true"
+          [scaleControl]="true"
+        >
+          <agm-marker
+            *ngFor="let unit of unitList"
+            [latitude]="unit.messages[0].latitude"
+            [longitude]="unit.messages[0].longitude"
+            [label]="unit.unitName"
+            [iconUrl]="'http://download.seaicons.com/icons/icons-land/transporter/128/Car-Top-Red-icon.png'"
+          >
+          </agm-marker>
+        </agm-map>
       </div>
     </div>
   </div>

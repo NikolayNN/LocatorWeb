@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {Unit} from "../../shared/models/unit.model";
 
 @Component({
   selector: 'app-map',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 55.7769;
+  lng: number = 27.3894;
+
+  @Input() unitList: Unit[] = [];
 
   constructor() { }
 
