@@ -11,6 +11,7 @@ import { ReportSelectorComponent } from './report-selector/report-selector.compo
 import {UnitsComponent} from './units/units.component';
 import {SearchPipe} from './units/search.pipe';
 import {AgmCoreModule} from '@agm/core';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import {AgmCoreModule} from '@agm/core';
     UnitInfoComponent,
     DateSelectorComponent,
     ReportSelectorComponent,
-    SearchPipe
+    SearchPipe,
+    ReportComponent
   ]
 })
 export class SystemModule {

@@ -25,7 +25,15 @@
       <app-report-selector [selectedUnit]="selectedUnit"></app-report-selector>
     </div>
   </form>
+
   <div class="col s9">
     <app-map [unitList]="unitList" [selectedUnit]="selectedUnit"></app-map>
   </div>
+
+  <div class="row">
+    <div class="col s9 offset-s3">
+      <app-report></app-report>
+    </div>
+  </div>
+
 </div>
