@@ -1,3 +1,33 @@
-<p>
-  report works!
-</p>
+<h4>Report - "Messages"</h4>
+
+<table class="striped">
+  <thead>
+  <tr>
+    <th>TimeStamp</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Altitude</th>
+    <th>Speed</th>
+    <th>Course</th>
+    <th>Satellites</th>
+    <th>Params</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr
+    *ngFor="let message of selectedUnit.messages"
+  >
+    <td>{{message.timeStamp}}</td>
+    <td>{{message.latitude}}</td>
+    <td>{{message.longitude}}</td>
+    <td>{{message.altitude}}</td>
+    <td>{{message.speed}}</td>
+    <td>{{message.course}}</td>
+    <td>{{message.amountSatellite}}</td>
+    <td>{{message.params}}</td>
+
+  </tr>
+
+  </tbody>
+</table>
